@@ -6,7 +6,7 @@ tags:
   - lambda
   - CDK
 private: false
-updated_at: '2024-06-23T07:26:14+09:00'
+updated_at: '2024-06-23T07:27:57+09:00'
 id: 349cdc77fa804f10b632
 organization_url_name: null
 slide: false
@@ -222,8 +222,8 @@ new ec2.InterfaceVpcEndpoint(this, "SecretmanagerEndPoint", {
 });
 ```
 
-- RDSProxyで指定するサブネットグループは2つ以上のサブネットを含む必要があります。
-- 今回RDSのクレデンシャルをsecretsManagerで管理するので、VPCにエンドポイントをアタッチします。
+- RDSProxyで指定するサブネットグループは2つ以上のサブネットを含む必要があるので2つ以上作成する
+- 今回RDSのクレデンシャルをsecretsManagerで管理するので、VPCにエンドポイントをアタッチする
 
 ## RDS & RDSProxy
 
@@ -269,8 +269,8 @@ const rdsProxy = rdsInstance.addProxy("SampleRDSProxy", {
 });
 ```
 
-- RDSとRDSProxy用のセキュリティグループを作成します
-- RDSProxyのシークレットは新規作成せずに、RDSのシークレットを指定します
+- RDSとRDSProxy用のセキュリティグループを作成する
+- RDSProxyのシークレットは新規作成せずに、RDSのシークレットを指定する
 
 ## Lambda
 
